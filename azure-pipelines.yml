@@ -16,7 +16,7 @@ steps:
     pwd
     echo "Contents of test/Pipelines:"
     ls -la test/Pipelines
-    cd test/Pipelines/doyinsolass.pipeline_template1
+    cd doyinsolass/pipeline_template1/azure-pipelines.yml
     echo "Contents of doyinsolass.pipeline_template1:"
     ls -la
     dotnet restore
