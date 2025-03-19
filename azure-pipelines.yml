@@ -12,7 +12,13 @@ steps:
     installationPath: $(Agent.ToolsDirectory)/dotnet
 
 - script: |
-    cd test/Pipelines/doyinsolass.pipeline_template1  # Navigate to the directory containing your .csproj or .sln file
+    echo "Current Directory:"
+    pwd
+    echo "Contents of test/Pipelines:"
+    ls -la test/Pipelines
+    cd test/Pipelines/doyinsolass.pipeline_template1
+    echo "Contents of doyinsolass.pipeline_template1:"
+    ls -la
     dotnet restore
     dotnet build
     dotnet test
