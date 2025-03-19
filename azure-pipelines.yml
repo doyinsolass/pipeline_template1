@@ -13,5 +13,10 @@ steps:
 
 - script: |
     cd $(Build.SourcesDirectory)
-    dotnet build **/*.csproj
+    project_file=$(find . -name "*.csproj" | head -n 1)
+    if [ -z "$project_file" ]; then
+      echo "No project file found"
+      exit 1
+    fi
+    dotnet build "$project_file"
   displayName: 'Build the project'
