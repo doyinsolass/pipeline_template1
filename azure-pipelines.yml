@@ -12,5 +12,14 @@ steps:
     installationPath: $(Agent.ToolsDirectory)/dotnet
 
 - script: |
+    echo "Current Directory:"
+    pwd
+    echo "Contents of root directory:"
+    ls -la
+    echo "Contents of test/Pipelines:"
+    ls -la test/Pipelines
+    cd test/Pipelines/doyinsolass.pipeline_template1
+    echo "Contents of doyinsolass.pipeline_template1:"
+    ls -la
     dotnet build
   displayName: 'Build the project'
